@@ -21,6 +21,7 @@ public class BasePage {
 		getDriver().findElement(by).clear();
 		getDriver().findElement(by).sendKeys(texto);
 	}
+	
 
 	public void escrever(String id_campo, String texto){
 		escrever(By.id(id_campo), texto);

@@ -14,11 +14,16 @@ public class MovimentacaoTest extends BaseTest {
 	@Test
 	public void InserirMovimentacao() {
 		menuPage.acessarTelaMovimentacao();
-		movimentacaoPage.inserirDataMovimentacao("04/01/2019");
-		movimentacaoPage.inserirDataPagamento("04/01/2019");
-		movimentacaoPage.inserirDescricao("kkkk");
-		movimentacaoPage.inserirInteressado("lllll");
-		movimentacaoPage.inserirValor("123,50");
+		movimentacaoPage.setDataMovimentacao("04/01/2019");
+		movimentacaoPage.setDataPagamento("04/01/2019");
+		movimentacaoPage.setDescricao("kkkk");
+		movimentacaoPage.setInteressado("lllll");
+		movimentacaoPage.setValor("123");
+		movimentacaoPage.setConta("Conta 100");
+		movimentacaoPage.setSituacao();
+		movimentacaoPage.Salvar();
+		movimentacaoPage.ValidaTela("Movimentação adicionada com sucesso!", movimentacaoPage.obterMensagemSucesso());
+		
 		
 		
 		
