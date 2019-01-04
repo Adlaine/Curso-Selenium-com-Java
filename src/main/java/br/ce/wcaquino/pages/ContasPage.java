@@ -18,6 +18,10 @@ public class ContasPage extends BasePage {
 		return obterTexto(By.xpath("//div[@class='alert alert-success']"));
 		
 	}
+	
+	public String obterMensagemErro() {
+		return obterTexto(By.xpath("//div[@class='alert alert-danger']"));
+	}
 
 	public void alterarConta(String string) {
 		obterCelula("Conta", string, "Ações", "tabelaContas").
@@ -29,6 +33,8 @@ public class ContasPage extends BasePage {
 		obterCelula("Conta", string, "Ações", "tabelaContas").
 		findElement(By.xpath("//span[@class='glyphicon glyphicon-remove-circle']")).click();
 	}
+	
+	
 	
 	
 }
