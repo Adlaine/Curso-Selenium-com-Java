@@ -41,6 +41,11 @@ public class BasePage {
 		clicarRadio(By.id(id));
 	}
 	
+	public void clicarBotaoPorTexto(String texto) {
+		clicarBotao(By.xpath("//button[.='"+ texto +"']"));
+		//button[@type='submit']
+	}
+	
 	public boolean isRadioMarcado(String id){
 		return getDriver().findElement(By.id(id)).isSelected();
 	}
