@@ -14,5 +14,14 @@ public class ResumoPage extends BasePage {
 		return obterTexto(By.xpath("//div[@class='alert alert-success']"));
 		
 	}
+	public void excluirContaComMovimentacao(String string) {
+		obterCelula("Conta", string, "Ações", "tabelaContas").
+		findElement(By.xpath("//span[@class='glyphicon glyphicon-remove-circle']")).click();
+		
+	}
+	
+	public String obterMensagemErro() {
+		return obterTexto(By.xpath("//div[@class='alert alert-danger']"));
+	}
 
 }

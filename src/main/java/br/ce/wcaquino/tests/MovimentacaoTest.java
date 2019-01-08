@@ -5,22 +5,27 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import br.ce.wcaquino.core.BaseTest;
 import br.ce.wcaquino.pages.MenuPage;
 import br.ce.wcaquino.pages.MovimentacaoPage;
-import javafx.beans.binding.ObjectExpression;
 import utils.DataUtils;
 
 
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)// para colocar os testes em ordem alfabeticas para a execução de todos
+
 public class MovimentacaoTest extends BaseTest {
+		
 	
 	MenuPage menuPage = new MenuPage();
 	MovimentacaoPage movimentacaoPage = new MovimentacaoPage();
 	
 	@Test
-	public void testInserirMovimentacao() {
+	public void test1_InserirMovimentacao() {
 		menuPage.acessarTelaMovimentacao();
 		movimentacaoPage.setDataMovimentacao(DataUtils.obterDataFormatada(new Date()));//já pega a data de hoje para colocar no formulario
 		movimentacaoPage.setDataPagamento(DataUtils.obterDataFormatada(new Date()));
@@ -34,7 +39,7 @@ public class MovimentacaoTest extends BaseTest {
 	}
 	
 	@Test
-	public void testValidarCamposObrigatorios() {
+	public void test2_ValidarCamposObrigatorios() {
 		menuPage.acessarTelaMovimentacao();
 		movimentacaoPage.Salvar();
 		List<String> erros = movimentacaoPage.obterErros();
@@ -49,7 +54,7 @@ public class MovimentacaoTest extends BaseTest {
 	}
 	
 	@Test
-	public void testInserirMovimentacaoFutura() {
+	public void test3_InserirMovimentacaoFutura() {
 		menuPage.acessarTelaMovimentacao();
 		Date dataFutura = DataUtils.obterDataComDiferencaDias(5);	
 		movimentacaoPage.setDataMovimentacao(DataUtils.obterDataFormatada(dataFutura));

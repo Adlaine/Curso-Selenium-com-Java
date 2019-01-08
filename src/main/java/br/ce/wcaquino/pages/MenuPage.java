@@ -30,5 +30,9 @@ public class MenuPage extends BasePage {
 		clicarLink("Resumo Mensal");
 
 	}
+	public void acessarTelaResumoMensal() {
+		clicarLink("Resumo Mensal");
+
+	}
 
 }
