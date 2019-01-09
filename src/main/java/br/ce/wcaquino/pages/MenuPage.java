@@ -32,7 +32,14 @@ public class MenuPage extends BasePage {
 	}
 	public void acessarTelaResumoMensal() {
 		clicarLink("Resumo Mensal");
+	}
+	
+	public void acessarTelaPrincipal() {
+		clicarLink("Home");
 
 	}
+	
+	
+	
 
 }

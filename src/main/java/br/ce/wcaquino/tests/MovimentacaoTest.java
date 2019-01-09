@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.ce.wcaquino.core.BaseTest;
+import br.ce.wcaquino.core.Propriedades;
 import br.ce.wcaquino.pages.MenuPage;
 import br.ce.wcaquino.pages.MovimentacaoPage;
 import utils.DataUtils;
@@ -32,7 +33,7 @@ public class MovimentacaoTest extends BaseTest {
 		movimentacaoPage.setDescricao("wwww");
 		movimentacaoPage.setInteressado("to");
 		movimentacaoPage.setValor("500");
-		movimentacaoPage.setConta("Conta alterada 3");
+		movimentacaoPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movimentacaoPage.setStatusPago();
 		movimentacaoPage.Salvar();
 		movimentacaoPage.ValidaTela("Movimentação adicionada com sucesso!", movimentacaoPage.obterMensagemSucesso());		
@@ -62,7 +63,7 @@ public class MovimentacaoTest extends BaseTest {
 		movimentacaoPage.setDescricao("wwww");
 		movimentacaoPage.setInteressado("qqqqq");
 		movimentacaoPage.setValor("120");
-		movimentacaoPage.setConta("Conta alterada 3");
+		movimentacaoPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
 		movimentacaoPage.setStatusPago();
 		movimentacaoPage.Salvar();
 			List<String> erros = movimentacaoPage.obterErros();

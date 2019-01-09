@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.ce.wcaquino.core.BaseTest;
+import br.ce.wcaquino.core.Propriedades;
 import br.ce.wcaquino.pages.ContasPage;
 import br.ce.wcaquino.pages.MenuPage;
 
@@ -32,7 +33,7 @@ public class ContaTest extends BaseTest {
 	public void test2_AlterarConta() {
 		menuPage.acessarTelaListaConta();
 		contasPage.alterarConta("Conta 100");
-		contasPage.setNome("Conta alterada 3");
+		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
 		contasPage.salvar();
 		contasPage.ValidaTela("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
 		
@@ -42,7 +43,7 @@ public class ContaTest extends BaseTest {
 	@Test
 	public void test3_InserirContaMesmoNome() {
 		menuPage.acessarTelaInserirConta();
-		contasPage.setNome("Conta alterada 3");
+		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
 		contasPage.salvar();
 		contasPage.ValidaTela("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());
 	}

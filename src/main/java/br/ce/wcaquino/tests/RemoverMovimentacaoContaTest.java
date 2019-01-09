@@ -2,8 +2,8 @@ package br.ce.wcaquino.tests;
 
 import org.junit.Test;
 
-import br.ce.wcaquino.core.BasePage;
 import br.ce.wcaquino.core.BaseTest;
+import br.ce.wcaquino.core.Propriedades;
 import br.ce.wcaquino.pages.ContasPage;
 import br.ce.wcaquino.pages.MenuPage;
 import br.ce.wcaquino.pages.ResumoPage;
@@ -19,7 +19,7 @@ public class RemoverMovimentacaoContaTest extends BaseTest {
 	public void TestExcluirContaComMovimentacao() {
 		
 		menuPage.acessarTelaListaConta();
-		resumoPage.excluirContaComMovimentacao("Conta alterada 3");
+		resumoPage.excluirContaComMovimentacao(Propriedades.NOME_CONTA_ALTERADA);
 		resumoPage.ValidaTela("Conta em uso na movimentações", contasPage.obterMensagemErro());
 	
 	}
